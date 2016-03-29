@@ -18,8 +18,9 @@
         <activity android:name=".ui.SlidingTabActivity" />
         <activity android:name=".ui.CommonTabActivity" />
         <activity android:name=".ui.SegmentTabActivity" />
-        <activity android:name=".ui.Text1Activity"></activity>
-        <activity android:name=".ui.Test1Activity"></activity>
+
+        <activity android:name=".ui.Test1Activity" />
+        <activity android:name=".ui.Test2Activity"></activity>
     </application>
 
 </manifest>

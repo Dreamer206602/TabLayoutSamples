@@ -15,15 +15,21 @@ import com.tq.ui.CommonTabActivity;
 import com.tq.ui.SegmentTabActivity;
 import com.tq.ui.SlidingTabActivity;
 import com.tq.ui.Test1Activity;
+import com.tq.ui.Test2Activity;
 
 public class MainActivity extends AppCompatActivity {
 
     private Context mContext = this;
-    private final String[] mItems = {"SlidingTabLayout", "CommonTabLayout", "SegmentTabLayout","Test1Activity"};
+    private final String[] mItems = {"SlidingTabLayout", "CommonTabLayout",
+            "SegmentTabLayout",
+            "Test1Activity",
+            "Test2Activity",
+    };
     private final Class<?>[] mClass = {SlidingTabActivity.class,
             CommonTabActivity.class,
             SegmentTabActivity.class,
-            Test1Activity.class
+            Test1Activity.class,
+            Test2Activity.class
     };
 
 
