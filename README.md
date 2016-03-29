@@ -35,7 +35,7 @@ can be used freely with other widgets together.
 
 <img src="/images/preview_1.gif" alt="screenshot" title="screenshot" width="270" height="486" />
 <img src="/images/preview_2.gif" alt="screenshot" title="screenshot2" width="270" height="486" />
-<img src="/images/preview_2.gif" alt="screenshot" title="screensho3" width="270" height="486" />
+<img src="/images/preview_3.gif" alt="screenshot" title="screensho3" width="270" height="486" />
 
 
 
