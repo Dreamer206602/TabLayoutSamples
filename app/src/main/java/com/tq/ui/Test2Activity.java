@@ -27,7 +27,7 @@ public class Test2Activity extends AppCompatActivity {
     @Bind(R.id.tl)
     CommonTabLayout tl;
     private ArrayList<Fragment>mfragments=new ArrayList<>();
-    private String[] mTitles={"iso","android","swift","Object-c"};
+    private String[] mTitles = {"Android", "java", "Swift", "ios"};
     private int[] mIConUnSelectIds = {R.mipmap.tab_home_unselect, R.mipmap.tab_speech_unselect,
             R.mipmap.tab_contact_unselect, R.mipmap.tab_more_unselect};
     private int[] mIconSelectIds = {R.mipmap.tab_home_select, R.mipmap.tab_speech_select,

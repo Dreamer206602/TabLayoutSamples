@@ -23,7 +23,7 @@ public class Test3Activity extends AppCompatActivity {
     SegmentTabLayout tl;
     @Bind(R.id.vp)
     ViewPager vp;
-    private String[] mTitles = {"android", "ios"};
+    private String[] mTitles = {"Java", "Objc"};
     private ArrayList<Fragment> mFragments = new ArrayList<>();
 
 

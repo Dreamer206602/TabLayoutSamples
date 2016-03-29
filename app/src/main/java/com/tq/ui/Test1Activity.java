@@ -23,7 +23,7 @@ public class Test1Activity extends AppCompatActivity {
     SlidingTabLayout tl;
     @Bind(R.id.vp)
     ViewPager vp;
-    private String[] mTitles = {"java", "C++", "Android", "Swift"};
+    private String[] mTitles = {"Android", "Java", "Swift", "Ios"};
     private ArrayList<Fragment>mFragments=new ArrayList<>();
 
     @Override
