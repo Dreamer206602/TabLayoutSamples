@@ -14,26 +14,31 @@ import com.tq.adapter.SimpleHomeAdapter;
 import com.tq.ui.CommonTabActivity;
 import com.tq.ui.SegmentTabActivity;
 import com.tq.ui.SlidingTabActivity;
+import com.tq.ui.Test1Activity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Context mContext=this;
-    private final String[] mItems={"SlidingTabLayout","CommonTabLayout","SegmentTabLayout"};
-    private final Class<?>[]mClass={SlidingTabActivity.class, CommonTabActivity.class, SegmentTabActivity.class};
+    private Context mContext = this;
+    private final String[] mItems = {"SlidingTabLayout", "CommonTabLayout", "SegmentTabLayout","Test1Activity"};
+    private final Class<?>[] mClass = {SlidingTabActivity.class,
+            CommonTabActivity.class,
+            SegmentTabActivity.class,
+            Test1Activity.class
+    };
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_main);
-        ListView lv=new ListView(mContext);
+        // setContentView(R.layout.activity_main);
+        ListView lv = new ListView(mContext);
         lv.setCacheColorHint(Color.TRANSPARENT);
         lv.setFadingEdgeLength(0);
-        lv.setAdapter(new SimpleHomeAdapter(mContext,mItems));
+        lv.setAdapter(new SimpleHomeAdapter(mContext, mItems));
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent=new Intent(mContext,mClass[position]);
+                Intent intent = new Intent(mContext, mClass[position]);
                 startActivity(intent);
             }
         });
