@@ -29,7 +29,7 @@ public class Test1Activity extends AppCompatActivity {
     @Bind(R.id.vp)
     ViewPager vp;
     private String[] mTitles = {"Android", "Java", "Swift", "Ios"};
-    private ArrayList<Fragment>mFragments=new ArrayList<>();
+    private ArrayList<Fragment> mFragments = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,19 +37,11 @@ public class Test1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_test1);
         ButterKnife.bind(this);
 
-//        for(String title:mTitles){
-//            mFragments.add(SimpleCardFragment.getInstance("Switch ViewPager Test1 "+title));
-//        }
 
-        for (String title:mTitles) {
-            mFragments.add(AndroidFragment.getInstance(title));
-//            mFragments.add(JavaFragment.getInstance(title));
-//            mFragments.add(SwiftFragment.getInstance(title));
-//            mFragments.add(IosFragment.getInstance(title));
-        }
-
-
-
+        mFragments.add(AndroidFragment.getInstance("1"));
+        mFragments.add(JavaFragment.getInstance("2"));
+        mFragments.add(SwiftFragment.getInstance("3"));
+        mFragments.add(IosFragment.getInstance("4"));
         vp.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         //TODO ViewPager 和TabLayout 相关联
         tl.setViewPager(vp);

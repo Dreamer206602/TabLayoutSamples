@@ -12,7 +12,11 @@ import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.tq.R;
 import com.tq.entity.TabEntity;
+import com.tq.fragment.AndroidFragment;
+import com.tq.fragment.IosFragment;
+import com.tq.fragment.JavaFragment;
 import com.tq.fragment.SimpleCardFragment;
+import com.tq.fragment.SwiftFragment;
 
 import java.util.ArrayList;
 
@@ -39,10 +43,13 @@ public class Test2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test2);
         ButterKnife.bind(this);
-        for (String title:mTitles){
-           mfragments.add(SimpleCardFragment.getInstance("Switch ViewPager Test2"+title));
-        }
-
+//        for (String title:mTitles){
+//           mfragments.add(SimpleCardFragment.getInstance("Switch ViewPager Test2"+title));
+//        }
+        mfragments.add(AndroidFragment.getInstance("android"));
+        mfragments.add(JavaFragment.getInstance("java"));
+        mfragments.add(SwiftFragment.getInstance("Swift"));
+        mfragments.add(IosFragment.getInstance("Ios"));
         for (int i = 0; i <mTitles.length ; i++) {
             mTabEntities.add(new TabEntity(mTitles[i],mIconSelectIds[i],mIConUnSelectIds[i]));
         }

@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import com.flyco.tablayout.SegmentTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.tq.R;
+import com.tq.fragment.IosFragment;
+import com.tq.fragment.JavaFragment;
 import com.tq.fragment.SimpleCardFragment;
 
 import java.util.ArrayList;
@@ -33,9 +35,8 @@ public class Test3Activity extends AppCompatActivity {
         setContentView(R.layout.activity_test3);
         ButterKnife.bind(this);
 
-        for (String title:mTitles){
-            mFragments.add(SimpleCardFragment.getInstance("Switch ViewPager test3 "+title));
-        }
+        mFragments.add(JavaFragment.getInstance("Javas"));
+        mFragments.add(IosFragment.getInstance("Objcc"));
 
         vp.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         tl.setTabData(mTitles);
