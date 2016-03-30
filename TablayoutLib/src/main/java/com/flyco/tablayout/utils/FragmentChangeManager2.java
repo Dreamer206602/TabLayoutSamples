@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 
 import java.util.ArrayList;
 
-public class FragmentChangeManager {
+public class FragmentChangeManager2 {
     private FragmentManager mFragmentManager;
     private int mContainerViewId;
     /** Fragment切换数组 */
@@ -14,7 +14,7 @@ public class FragmentChangeManager {
     /** 当前选中的Tab */
     private int mCurrentTab;
 
-    public FragmentChangeManager(FragmentManager fm, int containerViewId, ArrayList<Fragment> fragments) {
+    public FragmentChangeManager2(FragmentManager fm, int containerViewId, ArrayList<Fragment> fragments) {
         this.mFragmentManager = fm;
         this.mContainerViewId = containerViewId;
         this.mFragments = fragments;
@@ -36,8 +36,7 @@ public class FragmentChangeManager {
             FragmentTransaction ft = mFragmentManager.beginTransaction();
             Fragment fragment = mFragments.get(i);
             if (i == index) {
-                    ft.show(fragment);
-
+                ft.show(fragment);
             } else {
                 ft.hide(fragment);
             }

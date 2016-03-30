@@ -18,9 +18,7 @@ import butterknife.ButterKnife;
  */
 public class IosFragment extends BaseFragment {
 
-    @Bind(R.id.tv_card_title)
-    TextView tvCardTitle;
-    private String mTitle;
+
 
     private volatile static IosFragment instance;
     public static IosFragment getInstance() {

@@ -20,7 +20,8 @@
         <activity android:name=".ui.SegmentTabActivity" />
         <activity android:name=".ui.Test1Activity" />
         <activity android:name=".ui.Test2Activity" />
-        <activity android:name=".ui.Test3Activity"></activity>
+        <activity android:name=".ui.Test3Activity" />
+        <activity android:name=".ui.Test4Activity"></activity>
     </application>
 
 </manifest>

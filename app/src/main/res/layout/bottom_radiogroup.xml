@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_gravity="bottom"
+    android:background="@drawable/bottombar_bg"
+    android:orientation="horizontal">
+    <RadioButton
+        android:id="@+id/rb_1"
+        android:button="@null"
+       style="@style/bottombar"
+
+        android:layout_weight="1"
+        android:checked="true"
+        android:drawableTop="@drawable/select_home"
+        android:text="@string/home"
+        />
+
+    <RadioButton
+        android:id="@+id/rb_2"
+        style="@style/bottombar"
+        android:button="@null"
+        android:drawableTop="@drawable/select_speech"
+        android:text="@string/message"
+        android:layout_weight="1"/>
+
+    <RadioButton
+        android:id="@+id/rb_3"
+        style="@style/bottombar"
+        android:button="@null"
+        android:drawableTop="@drawable/select_contact"
+        android:text="@string/contact"
+        android:layout_weight="1"/>
+
+    <RadioButton
+        android:id="@+id/rb_4"
+        style="@style/bottombar"
+        android:button="@null"
+        android:drawableTop="@drawable/select_more"
+        android:text="@string/more"
+        android:layout_weight="1"/>
+
+</RadioGroup>

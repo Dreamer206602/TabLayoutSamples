@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.flyco.tablayout.utils.FragmentChangeManager;
+import com.flyco.tablayout.utils.FragmentChangeManager2;
 import com.flyco.tablayout.utils.UnreadMsgUtils;
 import com.flyco.tablayout.widget.MsgView;
 import com.nineoldandroids.animation.TypeEvaluator;
@@ -30,7 +31,7 @@ import com.nineoldandroids.animation.ValueAnimator;
 
 import java.util.ArrayList;
 
-public class SegmentTabLayout extends FrameLayout implements ValueAnimator.AnimatorUpdateListener {
+public class SegmentTabLayout2 extends FrameLayout implements ValueAnimator.AnimatorUpdateListener {
     private Context mContext;
     private String[] mTitles;
     private LinearLayout mTabsContainer;
@@ -82,18 +83,18 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
     private ValueAnimator mValueAnimator;
     private OvershootInterpolator mInterpolator = new OvershootInterpolator(0.8f);
 
-    private FragmentChangeManager mFragmentChangeManager;
+    private FragmentChangeManager2 mFragmentChangeManager;
     private float[] mRadiusArr = new float[8];
 
-    public SegmentTabLayout(Context context) {
+    public SegmentTabLayout2(Context context) {
         this(context, null, 0);
     }
 
-    public SegmentTabLayout(Context context, AttributeSet attrs) {
+    public SegmentTabLayout2(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public SegmentTabLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public SegmentTabLayout2(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         setWillNotDraw(false);//重写onDraw方法,需要调用这个方法来清除flag
         setClipChildren(false);
@@ -169,9 +170,8 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
 
     /** 关联数据支持同时切换fragments */
     public void setTabData(String[] titles, FragmentActivity fa, int containerViewId, ArrayList<Fragment> fragments) {
-        mFragmentChangeManager = new FragmentChangeManager(fa.getSupportFragmentManager(), containerViewId, fragments);
+        mFragmentChangeManager = new FragmentChangeManager2(fa.getSupportFragmentManager(), containerViewId, fragments);
         setTabData(titles);
-
     }
 
     /** 更新数据 */

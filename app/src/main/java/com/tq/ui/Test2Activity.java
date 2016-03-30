@@ -31,8 +31,8 @@ public class Test2Activity extends AppCompatActivity {
     ViewPager vp;
     @Bind(R.id.tl)
     CommonTabLayout tl;
-//    @Bind(R.id.fl_change)
-//    FrameLayout flChange;
+    @Bind(R.id.fl_change)
+    FrameLayout flChange;
     private ArrayList<BaseFragment> mFragments = new ArrayList<>();
     private String[] mTitles = {"Android", "java", "Swift", "ios"};
     private int[] mIConUnSelectIds = {R.mipmap.tab_home_unselect, R.mipmap.tab_speech_unselect,
@@ -54,43 +54,43 @@ public class Test2Activity extends AppCompatActivity {
             mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIConUnSelectIds[i]));
         }
 
-        vp.setAdapter(new MyPageAdapter(getSupportFragmentManager()));
-
-        //TODO
-//        tl.showDot(2);
-//        tl.setMsgMargin(2,3,4);
-        tl.setTabData(mTabEntities);
-        tl.setOnTabSelectListener(new OnTabSelectListener() {
-            @Override
-            public void onTabSelect(int position) {
-                vp.setCurrentItem(position);
-            }
-
-            @Override
-            public void onTabReselect(int position) {
-
-            }
-        });
-
-        vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                    tl.setCurrentTab(position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-        vp.setCurrentItem(1);
-        //tl.setCurrentTab(1);
-
+//        vp.setAdapter(new MyPageAdapter(getSupportFragmentManager()));
+//
+//        //TODO
+////        tl.showDot(2);
+////        tl.setMsgMargin(2,3,4);
+//        tl.setTabData(mTabEntities);
+//        tl.setOnTabSelectListener(new OnTabSelectListener() {
+//            @Override
+//            public void onTabSelect(int position) {
+//                vp.setCurrentItem(position);
+//            }
+//
+//            @Override
+//            public void onTabReselect(int position) {
+//
+//            }
+//        });
+//
+//        vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//            @Override
+//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//
+//            }
+//
+//            @Override
+//            public void onPageSelected(int position) {
+//                    tl.setCurrentTab(position);
+//            }
+//
+//            @Override
+//            public void onPageScrollStateChanged(int state) {
+//
+//            }
+//        });
+//        vp.setCurrentItem(1);
+//        //tl.setCurrentTab(1);
+//
     }
 
 

@@ -17,6 +17,7 @@ import com.tq.ui.SlidingTabActivity;
 import com.tq.ui.Test1Activity;
 import com.tq.ui.Test2Activity;
 import com.tq.ui.Test3Activity;
+import com.tq.ui.Test4Activity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,14 +26,16 @@ public class MainActivity extends AppCompatActivity {
             "SegmentTabLayout",
             "Test1Activity",
             "Test2Activity",
-            "Test3Activity"
+            "Test3Activity",
+            "Test4Activity"
     };
     private final Class<?>[] mClass = {SlidingTabActivity.class,
             CommonTabActivity.class,
             SegmentTabActivity.class,
             Test1Activity.class,
             Test2Activity.class,
-            Test3Activity.class
+            Test3Activity.class,
+            Test4Activity.class
     };
 
 

@@ -13,4 +13,9 @@
     <string name="gentleman">帅哥</string>
     <string name="Funny">搞笑</string>
     <string name="video">视频</string>
+
+    <string name="home">首页</string>
+    <string name="message">消息</string>
+    <string name="contact">联系人</string>
+    <string name="more">更多</string>
 </resources>

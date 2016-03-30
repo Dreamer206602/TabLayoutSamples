@@ -1,33 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tl="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-    <!--<com.flyco.tablayout.SlidingTabLayout-->
-        <!--android:id="@+id/tl"-->
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/tl"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#6D8FB0"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        tl:tl_indicator_margin_left="2dp"
+        tl:tl_indicator_margin_right="2dp"
+        tl:tl_indicator_style="BLOCK"/>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        />
+
+    <!--<TextView-->
+        <!--android:gravity="center"-->
+        <!--android:text="@string/android"-->
+        <!--android:id="@+id/tv_card_title"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_centerHorizontal="true" />-->
+
+    <!--<com.flyco.tablayout.SegmentTabLayout-->
+        <!--android:id="@+id/tl_3"-->
         <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="48dp"-->
-        <!--android:background="#6D8FB0"-->
-        <!--android:paddingLeft="5dp"-->
-        <!--android:paddingRight="5dp"-->
+        <!--android:layout_height="36dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:paddingLeft="25dp"-->
+        <!--android:paddingRight="25dp"-->
+        <!--tl:tl_bar_color="#ffffff"-->
+        <!--tl:tl_indicator_anim_enable="true"-->
+        <!--tl:tl_indicator_color="#F6CE59"-->
+        <!--tl:tl_indicator_margin_bottom="2dp"-->
         <!--tl:tl_indicator_margin_left="2dp"-->
         <!--tl:tl_indicator_margin_right="2dp"-->
-        <!--tl:tl_indicator_style="BLOCK"/>-->
+        <!--tl:tl_indicator_margin_top="2dp"/>-->
 
-   <!---->
-    <!--<android.support.v4.view.ViewPager-->
-        <!--android:id="@+id/vp"-->
-        <!--android:layout_height="match_parent"-->
+    <!--<FrameLayout-->
+        <!--android:id="@+id/fl_change_android"-->
         <!--android:layout_width="match_parent"-->
-        <!--/>-->
+        <!--android:layout_height="match_parent"/>-->
 
-    <TextView
-        android:gravity="center"
-        android:text="@string/android"
-        android:id="@+id/tv_card_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-</RelativeLayout>
+
+</LinearLayout>
