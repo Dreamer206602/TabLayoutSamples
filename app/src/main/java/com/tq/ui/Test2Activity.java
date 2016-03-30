@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.FrameLayout;
 
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
@@ -16,7 +17,6 @@ import com.tq.fragment.AndroidFragment;
 import com.tq.fragment.BaseFragment;
 import com.tq.fragment.IosFragment;
 import com.tq.fragment.JavaFragment;
-import com.tq.fragment.SimpleCardFragment;
 import com.tq.fragment.SwiftFragment;
 
 import java.util.ArrayList;
@@ -31,7 +31,9 @@ public class Test2Activity extends AppCompatActivity {
     ViewPager vp;
     @Bind(R.id.tl)
     CommonTabLayout tl;
-    private ArrayList<BaseFragment>mFragments=new ArrayList<>();
+//    @Bind(R.id.fl_change)
+//    FrameLayout flChange;
+    private ArrayList<BaseFragment> mFragments = new ArrayList<>();
     private String[] mTitles = {"Android", "java", "Swift", "ios"};
     private int[] mIConUnSelectIds = {R.mipmap.tab_home_unselect, R.mipmap.tab_speech_unselect,
             R.mipmap.tab_contact_unselect, R.mipmap.tab_more_unselect};
@@ -48,8 +50,8 @@ public class Test2Activity extends AppCompatActivity {
         mFragments.add(JavaFragment.getInstance());
         mFragments.add(SwiftFragment.getInstance());
         mFragments.add(IosFragment.getInstance());
-        for (int i = 0; i <mTitles.length ; i++) {
-            mTabEntities.add(new TabEntity(mTitles[i],mIconSelectIds[i],mIConUnSelectIds[i]));
+        for (int i = 0; i < mTitles.length; i++) {
+            mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIConUnSelectIds[i]));
         }
 
         vp.setAdapter(new MyPageAdapter(getSupportFragmentManager()));
@@ -57,7 +59,6 @@ public class Test2Activity extends AppCompatActivity {
         //TODO
 //        tl.showDot(2);
 //        tl.setMsgMargin(2,3,4);
-
         tl.setTabData(mTabEntities);
         tl.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
@@ -87,12 +88,13 @@ public class Test2Activity extends AppCompatActivity {
 
             }
         });
-        vp.setCurrentItem(0);
+        vp.setCurrentItem(1);
+        //tl.setCurrentTab(1);
 
     }
 
 
-    private class MyPageAdapter extends FragmentPagerAdapter{
+    private class MyPageAdapter extends FragmentPagerAdapter {
 
         public MyPageAdapter(FragmentManager fm) {
             super(fm);

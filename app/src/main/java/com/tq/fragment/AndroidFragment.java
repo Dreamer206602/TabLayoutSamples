@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -29,13 +30,15 @@ import butterknife.ButterKnife;
 public class AndroidFragment extends BaseFragment {
 
     private volatile static AndroidFragment instance;
-    @Bind(R.id.tl)
-    SlidingTabLayout tl;
-    @Bind(R.id.vp)
-    ViewPager vp;
+//    @Bind(R.id.tl)
+//    SlidingTabLayout tl;
+//    @Bind(R.id.vp)
+//    ViewPager vp;
+    @Bind(R.id.tv_card_title)
+    TextView tvCardTitle;
 
-    private String[]mTitles={"美女", "帅哥", "搞笑", "视频"};
-    private ArrayList<BaseFragment>mFragments=new ArrayList<>();
+    private String[] mTitles = {"美女", "帅哥", "搞笑", "视频"};
+    private ArrayList<BaseFragment> mFragments = new ArrayList<>();
 
 
     public static AndroidFragment getInstance() {
@@ -65,38 +68,38 @@ public class AndroidFragment extends BaseFragment {
         mFragments.add(FunnyFragment.getInstance());
         mFragments.add(VideoFragment.getInstance());
 
-        vp.setAdapter(new MyPagerAdapter(getChildFragmentManager()));
-        tl.setViewPager(vp);
-        tl.setOnTabSelectListener(new OnTabSelectListener() {
-            @Override
-            public void onTabSelect(int position) {
-                vp.setCurrentItem(position);
-            }
-
-            @Override
-            public void onTabReselect(int position) {
-
-            }
-        });
-        vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-                tl.setCurrentTab(position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-        tl.setCurrentTab(1);
+//        vp.setAdapter(new MyPagerAdapter(getChildFragmentManager()));
+//        tl.setViewPager(vp);
+//        tl.setOnTabSelectListener(new OnTabSelectListener() {
+//            @Override
+//            public void onTabSelect(int position) {
+//                vp.setCurrentItem(position);
+//            }
+//
+//            @Override
+//            public void onTabReselect(int position) {
+//
+//            }
+//        });
+//        vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//            @Override
+//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//
+//
+//            }
+//
+//            @Override
+//            public void onPageSelected(int position) {
+//
+//                tl.setCurrentTab(position);
+//            }
+//
+//            @Override
+//            public void onPageScrollStateChanged(int state) {
+//
+//            }
+//        });
+//        tl.setCurrentTab(1);
 
 
     }
@@ -107,7 +110,7 @@ public class AndroidFragment extends BaseFragment {
         ButterKnife.unbind(this);
     }
 
-    private class MyPagerAdapter extends FragmentPagerAdapter{
+    private class MyPagerAdapter extends FragmentPagerAdapter {
 
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);

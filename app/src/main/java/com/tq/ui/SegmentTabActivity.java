@@ -71,8 +71,6 @@ public class SegmentTabActivity extends AppCompatActivity {
 
         //TODO  和FrameLayout相关联
         tl4.setTabData(mTitles_2, this, R.id.fl_change, mFragments2);
-
-
         //TODO　同上
         tl5.setTabData(mTitles_4, this, R.id.fl_change2, mFragments3);
 
