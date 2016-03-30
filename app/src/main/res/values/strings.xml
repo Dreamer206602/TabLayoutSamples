@@ -7,4 +7,10 @@
     <string name="java">java</string>
     <string name="Swift">swift</string>
     <string name="Ios">ios</string>
+
+
+    <string name="beautifulGirl">美女</string>
+    <string name="gentleman">帅哥</string>
+    <string name="Funny">搞笑</string>
+    <string name="video">视频</string>
 </resources>

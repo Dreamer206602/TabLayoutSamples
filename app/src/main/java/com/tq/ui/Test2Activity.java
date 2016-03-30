@@ -89,9 +89,6 @@ public class Test2Activity extends AppCompatActivity {
         });
         vp.setCurrentItem(0);
 
-
-
-
     }
 
 
