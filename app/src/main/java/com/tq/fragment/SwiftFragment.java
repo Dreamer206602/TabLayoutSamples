@@ -16,16 +16,22 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SwiftFragment extends Fragment {
+public class SwiftFragment extends BaseFragment {
 
     @Bind(R.id.tv_card_title)
     TextView tvCardTitle;
     private String mTitle;
 
-    public static SwiftFragment getInstance(String title) {
-        SwiftFragment f = new SwiftFragment();
-        f.mTitle = title;
-        return f;
+    private volatile static SwiftFragment instance;
+    public static SwiftFragment getInstance() {
+       if (instance==null){
+           synchronized (IosFragment.class){
+               if(instance==null){
+                   instance=new SwiftFragment();
+               }
+           }
+       }
+        return instance;
     }
 
 
@@ -35,7 +41,6 @@ public class SwiftFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_swift, container, false);
         ButterKnife.bind(this, view);
-        tvCardTitle.setText(mTitle);
         return view;
     }
 

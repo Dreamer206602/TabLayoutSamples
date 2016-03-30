@@ -16,16 +16,22 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class JavaFragment extends Fragment {
+public class JavaFragment extends BaseFragment {
 
     @Bind(R.id.tv_card_title)
     TextView tvCardTitle;
     private String mTitle;
 
-    public static JavaFragment getInstance(String title) {
-        JavaFragment f = new JavaFragment();
-        f.mTitle = title;
-        return f;
+    private volatile  static  JavaFragment instance;
+    public static JavaFragment getInstance() {
+       if(instance==null){
+           synchronized (JavaFragment.class){
+               if(instance==null){
+                   instance=new JavaFragment();
+               }
+           }
+       }
+        return  instance;
     }
 
     @Override
@@ -34,7 +40,6 @@ public class JavaFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_java, container, false);
         ButterKnife.bind(this, view);
-        tvCardTitle.setText(mTitle);
         return view;
     }
 

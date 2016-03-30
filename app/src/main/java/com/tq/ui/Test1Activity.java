@@ -12,6 +12,7 @@ import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.tq.R;
 import com.tq.fragment.AndroidFragment;
+import com.tq.fragment.BaseFragment;
 import com.tq.fragment.IosFragment;
 import com.tq.fragment.JavaFragment;
 import com.tq.fragment.SimpleCardFragment;
@@ -29,7 +30,7 @@ public class Test1Activity extends AppCompatActivity {
     @Bind(R.id.vp)
     ViewPager vp;
     private String[] mTitles = {"Android", "Java", "Swift", "Ios"};
-    private ArrayList<Fragment> mFragments = new ArrayList<>();
+    private ArrayList<BaseFragment> mFragments = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +39,10 @@ public class Test1Activity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        mFragments.add(AndroidFragment.getInstance("1"));
-        mFragments.add(JavaFragment.getInstance("2"));
-        mFragments.add(SwiftFragment.getInstance("3"));
-        mFragments.add(IosFragment.getInstance("4"));
+        mFragments.add(AndroidFragment.getInstance());
+        mFragments.add(JavaFragment.getInstance());
+        mFragments.add(SwiftFragment.getInstance());
+        mFragments.add(IosFragment.getInstance());
         vp.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         //TODO ViewPager 和TabLayout 相关联
         tl.setViewPager(vp);

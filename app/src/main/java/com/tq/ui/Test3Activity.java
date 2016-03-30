@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.flyco.tablayout.SegmentTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.tq.R;
+import com.tq.fragment.BaseFragment;
 import com.tq.fragment.IosFragment;
 import com.tq.fragment.JavaFragment;
 import com.tq.fragment.SimpleCardFragment;
@@ -26,7 +27,7 @@ public class Test3Activity extends AppCompatActivity {
     @Bind(R.id.vp)
     ViewPager vp;
     private String[] mTitles = {"Java", "Objc"};
-    private ArrayList<Fragment> mFragments = new ArrayList<>();
+    private ArrayList<BaseFragment> mFragments = new ArrayList<>();
 
 
     @Override
@@ -35,8 +36,8 @@ public class Test3Activity extends AppCompatActivity {
         setContentView(R.layout.activity_test3);
         ButterKnife.bind(this);
 
-        mFragments.add(JavaFragment.getInstance("Javas"));
-        mFragments.add(IosFragment.getInstance("Objcc"));
+        mFragments.add(JavaFragment.getInstance());
+        mFragments.add(IosFragment.getInstance());
 
         vp.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         tl.setTabData(mTitles);

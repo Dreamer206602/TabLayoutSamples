@@ -16,16 +16,22 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class IosFragment extends Fragment {
+public class IosFragment extends BaseFragment {
 
     @Bind(R.id.tv_card_title)
     TextView tvCardTitle;
     private String mTitle;
 
-    public static IosFragment getInstance(String title) {
-        IosFragment f = new IosFragment();
-        f.mTitle = title;
-        return f;
+    private volatile static IosFragment instance;
+    public static IosFragment getInstance() {
+       if (instance==null){
+           synchronized (IosFragment.class){
+               if(instance==null){
+                   instance=new IosFragment();
+               }
+           }
+       }
+        return instance;
     }
 
     @Override
@@ -34,7 +40,6 @@ public class IosFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_ios, container, false);
         ButterKnife.bind(this, view);
-        tvCardTitle.setText(mTitle);
         return view;
     }
 

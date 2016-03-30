@@ -3,4 +3,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="android">android</string>
+    <string name="java">java</string>
+    <string name="Swift">swift</string>
+    <string name="Ios">ios</string>
 </resources>
