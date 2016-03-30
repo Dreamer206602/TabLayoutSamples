@@ -4,13 +4,18 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.tq.R;
+import com.tq.fragment.AndroidFragment;
+import com.tq.fragment.IosFragment;
+import com.tq.fragment.JavaFragment;
 import com.tq.fragment.SimpleCardFragment;
+import com.tq.fragment.SwiftFragment;
 
 import java.util.ArrayList;
 
@@ -32,16 +37,25 @@ public class Test1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_test1);
         ButterKnife.bind(this);
 
-        for(String title:mTitles){
-            mFragments.add(SimpleCardFragment.getInstance("Switch ViewPager Test1 "+title));
+//        for(String title:mTitles){
+//            mFragments.add(SimpleCardFragment.getInstance("Switch ViewPager Test1 "+title));
+//        }
+
+        for (String title:mTitles) {
+            mFragments.add(AndroidFragment.getInstance(title));
+//            mFragments.add(JavaFragment.getInstance(title));
+//            mFragments.add(SwiftFragment.getInstance(title));
+//            mFragments.add(IosFragment.getInstance(title));
         }
+
+
+
         vp.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         //TODO ViewPager 和TabLayout 相关联
         tl.setViewPager(vp);
         tl.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int position) {
-
                 vp.setCurrentItem(position);
             }
 
@@ -67,6 +81,8 @@ public class Test1Activity extends AppCompatActivity {
 
             }
         });
+        tl.setCurrentTab(0);
+        //vp.setCurrentItem(1);
 
 
     }
